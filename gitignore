@@ -1,0 +1,26 @@
+# Visual Studio / .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.db-shm
+*.db-wal
+
+
+# Rider
+.idea/
+
+# User secrets
+secrets.json
+
+# npm / node (if present)
+node_modules/
+
+# Log files
+*.log
+
+# Publish folder
+publish/

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\WaterServiceBookingSystem.props" />
+</Project>

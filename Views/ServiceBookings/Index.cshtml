@@ -1,0 +1,69 @@
+@model IEnumerable<WaterServiceBookingSystem.Models.ServiceBooking>
+
+@{
+    ViewData["Title"] = "Bookings";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4 fw-bold text-primary">📋 All Service Bookings</h2>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <p class="text-muted mb-0">Total Bookings: <strong>@Model.Count()</strong></p>
+        <a asp-action="Create" class="btn btn-primary">➕ Create New</a>
+    </div>
+
+    <table class="table table-hover table-bordered align-middle shadow-sm">
+        <thead class="table-primary">
+            <tr>
+                <th>Customer Name</th>
+                <th>Email Address</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Service Type</th>
+                <th>Preferred Date</th>
+                <th>Additional Notes</th>
+                <th style="width: 160px; text-align: center;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.CustomerName</td>
+                    <td>@item.Email</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Address</td>
+                    <td>@item.ServiceType</td>
+                    <td>@item.PreferredDate.ToString("yyyy-MM-dd")</td>
+                    <td>@item.Notes</td>
+                    <td class="text-center">
+                        <div class="btn-group" role="group">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-info text-white">✏️ Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-secondary mx-1">🔍 Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">🗑️ Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .table {
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #fff;
+    }
+    th {
+        text-align: center;
+        vertical-align: middle !important;
+    }
+    td {
+        vertical-align: middle !important;
+    }
+    .btn-group .btn {
+        min-width: 70px;
+        font-size: 0.85rem;
+    }
+</style>

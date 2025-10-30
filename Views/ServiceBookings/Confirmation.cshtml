@@ -1,0 +1,18 @@
+@model WaterServiceBookingSystem.Models.ServiceBooking
+
+@{
+    ViewData["Title"] = "Booking Confirmation";
+}
+
+<div class="container mt-5 text-center">
+    <h2 class="text-success mb-4">🎉 Booking Confirmed Successfully!</h2>
+    <p>Thank you, <strong>@Model.CustomerName</strong>!</p>
+    <p>Your booking for <strong>@Model.ServiceType</strong> service has been received.</p>
+    <p>We’ll reach you soon on <strong>@Model.Phone</strong> or <strong>@Model.Email</strong>.</p>
+    <p><em>Preferred Date:</em> @Model.PreferredDate.ToString("dd MMM yyyy")</p>
+
+    <div class="mt-4">
+        <a asp-action="Index" class="btn btn-primary me-2">🔍 View All Bookings</a>
+        <a asp-action="Create" class="btn btn-success">➕ Book Another Service</a>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+@model WaterServiceBookingSystem.Models.ServiceBooking
+@{
+    ViewData["Title"] = "Book Service";
+}
+
+<div class="card p-4 shadow-sm">
+    <div class="card-body">
+        <h3 class="mb-3">Book Service</h3>
+        <form asp-action="Create" method="post">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label asp-for="CustomerName" class="form-label"></label>
+                    <input asp-for="CustomerName" class="form-control" />
+                    <span asp-validation-for="CustomerName" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" type="email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Phone" class="form-label"></label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-12">
+                    <label asp-for="Address" class="form-label"></label>
+                    <textarea asp-for="Address" class="form-control" rows="2"></textarea>
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="ServiceType" class="form-label"></label>
+                    <select asp-for="ServiceType" class="form-select">
+                        <option value="">-- Select --</option>
+                        <option>Installation</option>
+                        <option>Repair</option>
+                        <option>Filter Replacement</option>
+                        <option>Maintenance</option>
+                    </select>
+                    <span asp-validation-for="ServiceType" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="PreferredDate" class="form-label"></label>
+                    <input asp-for="PreferredDate" type="date" class="form-control" />
+                    <span asp-validation-for="PreferredDate" class="text-danger"></span>
+                </div>
+
+                <div class="col-12 text-end mt-2">
+                    <a asp-action="Index" class="btn btn-outline-secondary me-2">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Book Now 💧</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
