@@ -43,8 +43,8 @@ All the data is stored in a local database, and the admin can view and update th
    https://localhost:5001
 
 
-🗃️ Database Info
+## 🗃️ Database Info
 
 The project uses SQLite, and the database file (Database.db) is already included in the repository, so no setup is needed.
 
-⭐ Thank you for checking out my project!
+## ⭐ Thank you for checking out my project!
